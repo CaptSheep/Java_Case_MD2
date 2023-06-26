@@ -25,7 +25,7 @@ public class FileManager {
    }
     public void readFromFileEmployee(ArrayList<Employee> employeeList){
         try{
-            FileReader fileReader = new FileReader("User.csv");
+            FileReader fileReader = new FileReader("Employee.csv");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String data;
             while((data = bufferedReader.readLine()) != null){
