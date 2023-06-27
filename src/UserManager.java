@@ -17,12 +17,20 @@ public class UserManager {
 
     }
 
-    public void register(User newUser) throws IOException {
+    public void register() throws IOException {
+        System.out.println("Input User ID :");
+        int userId = Integer.parseInt(scanner.nextLine());
+        System.out.print("Input User Name :");
+        String userName = scanner.nextLine();
+        System.out.println("Input User Password :");
+        String userPassword = scanner.nextLine();
+        User newUser = new User(userId,userName,userPassword);
+        System.out.println("User %s Register Successfully".formatted(userName));
         this.userList.add(newUser);
         this.fileManager.writeFileUser(this.userList);
     }
 
-    public void login() {
+    public void login() throws IOException {
         System.out.println("Input UserName : ");
         String userName = this.scanner.nextLine();
         System.out.println("Input Password:  ");
@@ -41,5 +49,6 @@ public class UserManager {
             System.out.println(user.toString());
         }
     }
+
 
 }

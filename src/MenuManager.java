@@ -1,14 +1,16 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MenuManager {
     EmployeeManager employeeManager = new EmployeeManager();
 
 
+
     public void showLoginMenu() {
         System.out.println(" Input your choices : \n 1. Login \n 2. Register"
         );
     }
-    public void showMainMenu(){
+    public void showMainMenu() throws IOException {
         Scanner scanner = new Scanner(System.in);
         while(true){
             System.out.println(" 1. Show All Employee Menu \n 2. Show All Department Menu ");
@@ -20,13 +22,14 @@ public class MenuManager {
                 case 2 :
                     this.showDepartmentMenu();
                     break;
+
             }
 
         }
 
     }
 
-    public void showEmployeeMenu(){
+    public void showEmployeeMenu() throws IOException {
         Scanner scanner = new Scanner(System.in);
         while(true){
             System.out.println(" 1. Show All Employee \n 2. Add New Employee \n 3. Update Employee \n 4. Show Employee Info \n 5. Delete Employee \n 6. Find Employee ( By ID )");
@@ -35,7 +38,6 @@ public class MenuManager {
                 case 1 :
                     break;
                 case 2 :
-
                     System.out.println("Input EmployeeId : ");
                     int employeeId  =Integer.parseInt(scanner.nextLine());
                     System.out.println("Input Employee Age : ");
@@ -49,6 +51,10 @@ public class MenuManager {
                     Employee newEmployee = new Employee(employeeId,employeeAge,employeeName,employeeAddress,employeeDepartment);
                     this.employeeManager.addEmployee(newEmployee);
                     break;
+                case 6 :
+                    System.out.println("Input ID User :");
+                    int id = Integer.parseInt(scanner.nextLine());
+                    this.employeeManager.findEmployeeById(id);
 //
             }
 
