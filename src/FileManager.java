@@ -42,7 +42,7 @@ public class FileManager {
 
     public void writeFileUser(ArrayList<User> userLists) throws IOException {
       try{
-          FileWriter fileWriter = new FileWriter("User.csv",true);
+          FileWriter fileWriter = new FileWriter("User.csv");
           BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
           for(User item : userLists){
                 bufferedWriter.write(item.userInfo());
@@ -58,7 +58,7 @@ public class FileManager {
     }
     public void writeFileEmployee(ArrayList<Employee> employeeList) throws IOException {
         try{
-            FileWriter fileWriter = new FileWriter("Employee.csv",true);
+            FileWriter fileWriter = new FileWriter("Employee.csv");
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             for(Employee item : employeeList){
                 bufferedWriter.write(item.employeeInfo());

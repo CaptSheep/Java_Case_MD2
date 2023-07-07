@@ -89,13 +89,14 @@ public class EmployeeManager {
 
     }
 
-    public void deleteEmployeeById(){
+    public void deleteEmployeeById() throws IOException {
         System.out.println("Input Employee ID : ");
         String employeeId  =scanner.nextLine();
         Employee findEmployee = this.findEmployeeById(employeeId);
         if(findEmployee !=  null){
-            this.employeeList.remove(employeeId);
+            this.employeeList.remove(findEmployee);
             System.out.println("Delete Employee with ID %s success".formatted(employeeId));
+            this.fileManager.writeFileEmployee(this.employeeList);
         }
         else {
             System.out.println("Can not find this Employee with ID %s".formatted(employeeId));
