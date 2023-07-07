@@ -23,6 +23,22 @@ public class FileManager {
             err.printStackTrace();
         }
    }
+    public void readFromFileDepartment(ArrayList<Department> departmentList){
+        try{
+            FileReader fileReader = new FileReader("Department.csv");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String data;
+            while((data = bufferedReader.readLine()) != null){
+                String [] arrayData  = data.split(",");
+                Department department = new Department(arrayData[0],arrayData[1]);
+                departmentList.add(department);
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException err){
+            err.printStackTrace();
+        }
+    }
     public void readFromFileEmployee(ArrayList<Employee> employeeList){
         try{
             FileReader fileReader = new FileReader("Employee.csv");
@@ -56,6 +72,22 @@ public class FileManager {
       }
 
     }
+    public void writeFileDepartment(ArrayList<Department> departmentList) throws IOException {
+        try{
+            FileWriter fileWriter = new FileWriter("Department.csv");
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            for(Department item : departmentList){
+                bufferedWriter.write(item.departmentInfo());
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.close();
+            fileWriter.close();
+        }
+        catch (IOException err){
+            err.printStackTrace();
+        }
+
+    }
     public void writeFileEmployee(ArrayList<Employee> employeeList) throws IOException {
         try{
             FileWriter fileWriter = new FileWriter("Employee.csv");
@@ -72,21 +104,5 @@ public class FileManager {
         }
 
     }
-//    public void writeFileDepartment(ArrayList<Department> departmentList) throws IOException {
-//        try{
-//            FileWriter fileWriter = new FileWriter("Employee.csv",true);
-//            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-//            for(Department item : departmentList){
-//                bufferedWriter.write(item.toString());
-//                bufferedWriter.newLine();
-//            }
-//            bufferedWriter.close();
-//            fileWriter.close();
-//        }
-//        catch (IOException err){
-//            err.printStackTrace();
-//        }
-//
-//    }
 
 }

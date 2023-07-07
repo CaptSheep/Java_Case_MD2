@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EmployeeManager {
-    private final ArrayList<Employee> employeeList;
+    public final ArrayList<Employee> employeeList;
     private final FileManager fileManager;
     private final Scanner scanner;
 
