@@ -1,11 +1,11 @@
 public class Employee {
-    private int employeeId ;
+    private String employeeId ;
     private int employeeAge;
     private String employeeName;
     private String employeeAddress;
     private String employeeDepartment;
 
-    public Employee(int employeeId, int employeeAge, String employeeName, String employeeAddress, String employeeDepartment) {
+    public Employee(String employeeId, int employeeAge, String employeeName, String employeeAddress, String employeeDepartment) {
         this.employeeId = employeeId;
         this.employeeAge = employeeAge;
         this.employeeName = employeeName;
@@ -16,11 +16,11 @@ public class Employee {
     public Employee() {
     }
 
-    public int getEmployeeId() {
+    public String getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
+    public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
     }
 
@@ -56,14 +56,17 @@ public class Employee {
         this.employeeDepartment = employeeDepartment;
     }
 
+    public String employeeInfo(){
+        return employeeId+","+employeeAge+","+employeeName+","+employeeAddress+","+employeeDepartment;
+    }
     @Override
     public String toString() {
-        return "Employee{" +
-                "employeeId=" + employeeId +
-                ", employeeAge=" + employeeAge +
-                ", employeeName='" + employeeName + '\'' +
-                ", employeeAddress='" + employeeAddress + '\'' +
-                ", employeeDepartment='" + employeeDepartment + '\'' +
-                '}';
+        return
+                "employeeId : " + employeeId +
+                ", employeeAge : " + employeeAge +
+                ", employeeName : '" + employeeName +
+                ", employeeAddress : '" + employeeAddress +
+                ", employeeDepartment : '" + employeeDepartment
+            ;
     }
 }

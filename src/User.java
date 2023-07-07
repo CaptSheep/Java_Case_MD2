@@ -1,9 +1,9 @@
 public class User {
-    private int userId ;
+    private String userId;
     private String userName;
-    private String  userPassword;
+    private String userPassword;
 
-    public User(int userId, String userName, String userPassword) {
+    public User(String userId, String userName, String userPassword) {
         this.userId = userId;
         this.userName = userName;
         this.userPassword = userPassword;
@@ -12,20 +12,20 @@ public class User {
     public User() {
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
+    }
+
+    public String userInfo() {
+        return userId + "," + userName + "," + userPassword;
     }
 
     @Override
     public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", userPassword='" + userPassword + '\'' +
-                '}';
+        return "userId : " + userId + "," + " userName : " + userName + "," + " userPassword " + userPassword;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 

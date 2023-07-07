@@ -14,7 +14,7 @@ public class FileManager {
             String data;
             while((data = bufferedReader.readLine()) != null){
                 String [] arrayData  = data.split(",");
-                User user = new User(Integer.parseInt(arrayData[0]),arrayData[1],arrayData[2]);
+                User user = new User(arrayData[0],arrayData[1],arrayData[2]);
                 userList.add(user);
             }
         } catch (FileNotFoundException e) {
@@ -30,7 +30,7 @@ public class FileManager {
             String data;
             while((data = bufferedReader.readLine()) != null){
                 String [] arrayData  = data.split(",");
-                Employee employee = new Employee(Integer.parseInt(arrayData[0]),Integer.parseInt(arrayData[1]),arrayData[2],arrayData[3],arrayData[4]);
+                Employee employee = new Employee(arrayData[0],Integer.parseInt(arrayData[1]),arrayData[2],arrayData[3],arrayData[4]);
                 employeeList.add(employee);
             }
         } catch (FileNotFoundException e) {
@@ -45,7 +45,7 @@ public class FileManager {
           FileWriter fileWriter = new FileWriter("User.csv",true);
           BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
           for(User item : userLists){
-                bufferedWriter.write(item.toString());
+                bufferedWriter.write(item.userInfo());
                 bufferedWriter.newLine();
           }
           bufferedWriter.close();
@@ -61,7 +61,7 @@ public class FileManager {
             FileWriter fileWriter = new FileWriter("Employee.csv",true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             for(Employee item : employeeList){
-                bufferedWriter.write(item.toString());
+                bufferedWriter.write(item.employeeInfo());
                 bufferedWriter.newLine();
             }
             bufferedWriter.close();

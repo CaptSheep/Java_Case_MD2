@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
-        EmployeeManager employeeManager = new EmployeeManager();
         UserManager userManager = new UserManager();
         MenuManager menuManager = new MenuManager();
         int userChoice = -1;
@@ -18,5 +17,7 @@ public class Main {
                 case 2 -> userManager.register();
             }
         }
+
+
     }
 }
