@@ -1,11 +1,16 @@
+import java.util.ArrayList;
+
 public class Department {
     String departmentId ;
     String departmentName;
-
+    ArrayList<Employee> employeeList;
+    private EmployeeManager employeeManager  ;
 
     public Department(String departmentId, String departmentName) {
         this.departmentId = departmentId;
         this.departmentName = departmentName;
+        this.employeeManager = new EmployeeManager();
+        this.employeeList = (ArrayList<Employee>) employeeManager.employeeList.clone();
 
     }
 
