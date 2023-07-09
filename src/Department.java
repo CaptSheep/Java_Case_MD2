@@ -4,9 +4,9 @@ public class Department {
 
 
     public Department(String departmentId, String departmentName) {
-
         this.departmentId = departmentId;
         this.departmentName = departmentName;
+
     }
 
     public String getDepartmentId() {
@@ -25,9 +25,7 @@ public class Department {
         this.departmentName = departmentName;
     }
 
-    public String departmentInfo(){
-        return departmentId+','+departmentName;
-    }
+
 
     @Override
     public String toString() {
@@ -36,4 +34,10 @@ public class Department {
                 ", departmentName='" + departmentName + '\'' +
                 '}';
     }
+
+    public String departmentInfo(){
+        return departmentId+','+departmentName;
+    }
+
+
 }
