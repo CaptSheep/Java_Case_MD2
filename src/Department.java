@@ -30,7 +30,13 @@ public class Department {
         this.departmentName = departmentName;
     }
 
+    public ArrayList<Employee> getEmployeeList() {
+        return employeeList;
+    }
 
+    public void setEmployeeList(ArrayList<Employee> employeeList) {
+        this.employeeList = employeeList;
+    }
 
     @Override
     public String toString() {
@@ -43,6 +49,5 @@ public class Department {
     public String departmentInfo(){
         return departmentId+','+departmentName;
     }
-
 
 }
