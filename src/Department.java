@@ -6,6 +6,7 @@ public class Department {
     ArrayList<Employee> employeeList;
     private EmployeeManager employeeManager  ;
 
+
     public Department(String departmentId, String departmentName) {
         this.departmentId = departmentId;
         this.departmentName = departmentName;
@@ -47,7 +48,10 @@ public class Department {
     }
 
     public String departmentInfo(){
-        return departmentId+','+departmentName;
+        for(Employee item : this.employeeList){
+            return departmentId+','+departmentName+','+"\n"+item.employeeInfo();
+        }
+        return null;
     }
 
 }

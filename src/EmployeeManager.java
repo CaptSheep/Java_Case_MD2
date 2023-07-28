@@ -1,4 +1,3 @@
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -36,6 +35,18 @@ public class EmployeeManager {
         return null;
     }
 
+    public void getEmployeeInfo(){
+        System.out.println("Input ID Employee :");
+        String id = scanner.nextLine();
+        Employee findEmployee = this.findEmployeeById(id);
+        if(findEmployee != null){
+            System.out.println("The Employee with ID %s find successfully ".formatted(id));
+            System.out.println(findEmployee.employeeInfo());
+        }
+        else {
+            System.out.println("Can not find the Employee with ID %s ".formatted(id));
+        }
+    }
     public void addEmployee() throws IOException {
         try {
             System.out.println("Input EmployeeId : ");
